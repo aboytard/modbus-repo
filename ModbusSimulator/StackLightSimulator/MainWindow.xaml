@@ -1,0 +1,91 @@
+﻿<Window x:Class="StackLightSimulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StackLightSimulator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="GvMain">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="GvSlDisplay" Grid.Column="4" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="25*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle x:Name="Body" Fill="Gray" Stroke="Black" StrokeThickness="3" Grid.Column="3" Grid.RowSpan="3" />
+            <Ellipse x:Name="RedLight" Fill="Red" Stroke="Black" StrokeThickness="2" Grid.Column="3" Grid.RowSpan="1" Grid.Row="0"/>
+            <Ellipse x:Name="YellowLight" Fill="Yellow" Stroke="Black" StrokeThickness="2" Grid.Column="3" Grid.RowSpan="1" Grid.Row="1"/>
+            <Ellipse x:Name="GreenLight" Fill="Green" Stroke="Black" StrokeThickness="2" Grid.Column="3" Grid.RowSpan="1" Grid.Row="2"/>
+        </Grid>
+
+
+        <Grid x:Name="GvSlProperties" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="25*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="60*"/>
+            </Grid.ColumnDefinitions>
+            <Label Name="Lb_Color" Content="Color : "  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+            <TextBox Name="Tb_Color" HorizontalAlignment="Center" Grid.Column="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Grid.Row="0" Height="36" Width="120"/>
+            <Label Name="Lb_ListeningBit" Content="Bit :" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+            <TextBox Name="Tb_ListeningBit" HorizontalAlignment="Center" Grid.Column="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Grid.Row="1" Height="36" Width="120"/>
+            <Label Name="Lb_NbWord" Content="Word : " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+            <TextBox Name="Tb_NbWord" HorizontalAlignment="Center" Grid.Column="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Grid.Row="2" Height="36" Width="120"/>
+            <Label Name="Lb_SeqActive" Content="Seq Active :" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3"/>
+            <TextBox Name="Tb_SeqActive" HorizontalAlignment="Center" Grid.Column="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Grid.Row="3" Height="36" Width="120"/>
+            <Label Name="Lb_SeqInactive" Content="Seq Inactive : " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="4"/>
+            <TextBox Name="Tb_SeqInactive" HorizontalAlignment="Center" Grid.Column="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Grid.Row="4" Height="36" Width="120"/>
+            <Label Name="Lb_Repetition" Content="Repetition : " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="5"/>
+            <TextBox Name="Tb_Repetition" HorizontalAlignment="Center" Grid.Column="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Grid.Row="5" Height="36" Width="120"/>
+        </Grid>
+
+        <Grid x:Name="GvConnection" Grid.Column="0" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="25*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
+            </Grid.ColumnDefinitions>
+            <Label Name="Lb_ip" Content="Ip : "  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+            <TextBox Name="Tb_Ip" HorizontalAlignment="Center" Grid.Column="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Grid.ColumnSpan="2" Width="80" Height="26"/>
+            <Label Name="Lb_Port" Content="Port : "  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+            <TextBox Name="Tb_Port" HorizontalAlignment="Center" Grid.Column="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Grid.Row="1" Width="80" Grid.ColumnSpan="2" Height="26"/>
+            <Button Name ="Btn_Start" Content="Start" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" Grid.Row="0"/>
+            <Button Name ="Btn_Stop" Content="Stop" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" Grid.Row="1"/>
+        </Grid>
+    </Grid>
+</Window>
